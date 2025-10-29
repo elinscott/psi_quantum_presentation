@@ -477,6 +477,7 @@ table.hline(),
 #align(center + horizon,
   image("figures/tmos.svg", width: 50%)
 )
+#blcite(<Rodl2009>)
 
 == The historical derivation of DFT+_U_(+_J_)
 
