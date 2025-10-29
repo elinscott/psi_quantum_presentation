@@ -132,7 +132,7 @@
   <macro name="volume">
     <choose>
       <if type="article-journal" match="any">
-        <text variable="volume" font-weight="bold" suffix=","/>
+        <text variable="volume" suffix=","/>
       </if>
       <else>
         <group delimiter=" ">
