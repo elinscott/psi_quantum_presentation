@@ -211,9 +211,13 @@ $
 #pause
 - Perdew, Parr, Levy, and Balduz@Perdew1982a showed that the exact total energy is piecewise linear in electron number (using ensembles) #pause
 - Yang, Zhang, and Ayers@Yang2000 provided an alternative proof without invoking ensembles #pause
-- We showed@Burgess2023b that the "convexity condition" follows _i.e._
-  $ 2 E(N) <= E(N + 1) + E(N - 1) $ #pause
-- ... and that similar reasoning can be applied to magnetisation@Burgess2024a
+- We showed@Burgess2023b that the "convexity condition" follows _i.e._ for all DFTs that are
+  - exact for all $v$-representable densities
+  - size-consistent
+  - translationally invariant
+  then
+  $ 2 E(N) <= E(N + 1) + E(N - 1) $
+- ... and that similar reasoning applies to total energy as a function of total magnetisation@Burgess2024a
 
 #focus-slide()[Core idea: enforce piecewise linearity]
 
@@ -498,7 +502,7 @@ table.hline(),
 
   $
     E_"Hub"
-    = & 1/2 sum_(m n m'n' sigma \ m != n, m' != n'))
+    = & 1/2 sum_(m n m'n' sigma \ m != n, m' != n')
     (U_(m n n'm')-U_(m n m' n'))n^(sigma)_(m m') n^(sigma)_(n n')
     +1/2 sum_(m n m'n' sigma)U_(m n m'n')n_(m n')^(sigma)n_(n m')^(-sigma),
   $ <equation_EU1>
@@ -538,7 +542,7 @@ table.hline(),
   $ <equation_EU3>
   where the on-site Coulomb repulsion parameter $U^I$ has been effectively reduced by $J^I$ to $U^I_"eff"$. The DFT+_U_ correction to the KS potential is given by
   $
-     hat V_(U) = sum_(I sigma m n)U^(I) |m chevron.r (1/2-n_(m n)^(I sigma) ) chevron.l n|.
+     hat(V)_(U) = sum_(I sigma m n)U^(I) |m chevron.r (1/2-n_(m n)^(I sigma) ) chevron.l n|.
   $
   // With this, the derivation is complete: the Hubbard-model formalism is in a form which can be incorporated into the framework of (DFT).
   // onslide<2->(
@@ -614,7 +618,7 @@ mat(delayedmarkhl(#6, mat(delim: #none, chi^(arrow.t arrow.t)_(1 1), chi^(arrow.
  $],
  [#pause #pause $U^I = [chi_0^(-1) - chi^(-1)]_(I I)$],
  [#pause #sym.arrow.r],
- [$U^(I sigma) = ???$],
+ [$f^(sigma sigma')_(I I) arrow.r^? U^(I sigma)$],
   )
 
 
