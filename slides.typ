@@ -158,24 +158,24 @@ From the auxiliary, non-interacting system:
 #blcite(<Onida2002>)
 
 == Learning nothing from Icarus
-#slide(repeat: 3, self => [
+- single-particle excitation energies can be related to total energy differences
+$ - epsilon_"HOMO" = I = E(N - 1) - E(N) $ #pause
+- the long-range decay of the density is proportional to $epsilon_"HOMO"$@Almbladh1985 #pause
+- the KS xc potential is the best local approx. to the xc self-energy@Casida1995 #pause
+
+#slide(repeat: 2, self => [
   #let (uncover, only, alternatives, delayedmark, delayedmarkhl) = methods-with-marks(self)
 
-But single-particle excitation energies can be related to total energy differences
 
-$ - epsilon_"HOMO" = I = E(N - 1) - E(N) $
-
-... and even to the long-range decay of the density
-
-#alternatives[
-][
+#align(horizon + center,
+alternatives()[
 #image("figures/ip_1.svg", width: 90%)
 ][
 #image("figures/ip_2.svg", width: 90%)
 ][
 ]
+)
 
-#v(-3em)
 #blcite(<Dabo2010>)
 ])
 
@@ -211,12 +211,12 @@ $
 #pause
 - Perdew, Parr, Levy, and Balduz@Perdew1982a showed that the exact total energy is piecewise linear in electron number (using ensembles) #pause
 - Yang, Zhang, and Ayers@Yang2000 provided an alternative proof without invoking ensembles #pause
-- We showed@Burgess2023b that the "convexity condition" follows _i.e._ for all DFTs that are
+- We showed@Burgess2023b that the "convexity condition" follows _i.e._
+  $ 2 E(N) <= E(N + 1) + E(N - 1) $
+  for all DFTs that are
   - exact for all $v$-representable densities
   - size-consistent
-  - translationally invariant
-  then
-  $ 2 E(N) <= E(N + 1) + E(N - 1) $
+  - translationally invariant #pause
 - ... and that similar reasoning applies to total energy as a function of total magnetisation@Burgess2024a
 
 #focus-slide()[Core idea: enforce piecewise linearity]
@@ -473,13 +473,13 @@ table.hline(),
 
 ])
 
-== The historical derivation of DFT+_U_(+_J_)
+== The historical derivation of DFT+_U_
 #align(center + horizon,
   image("figures/tmos.svg", width: 50%)
 )
 #blcite(<Rodl2009>)
 
-== The historical derivation of DFT+_U_(+_J_)
+== The historical derivation of DFT+_U_
 
 #slide(self => [
   #set text(size: 0.5em)
@@ -629,15 +629,16 @@ mat(delayedmarkhl(#6, mat(delim: #none, chi^(arrow.t arrow.t)_(1 1), chi^(arrow.
 == Advantages of spin-resolved LR
 #pause
 - conceptual consistency (spin-resolved functional #sym.arrow.l.r spin-resolved linear response) #pause
+- can recover the conventional linear response results #pause
+- $J$ is "free" #pause
+- easily implemented #pause
 - can perform unconstrained constrained linear response #pause
 
   _e.g._ suppose we want to compute $ lr((d^2E_"Hxc") / (d (n^I)^2) |)_(mu^I)$ #pause
 
   This is easy with spin-resolved LR: $lr((d^2E_"Hxc") / (d n^2) |)_(mu) = & 1/4 (f^(arrow.t arrow.t) + f^(arrow.b arrow.b) + f^(arrow.t arrow.b) + f^(arrow.b arrow.t))$
   #pause
-- can recover the conventional linear response results #pause
-- $J$ is "free" #pause
-- easily implemented
+- ability to pursue more flexible, tailored corrections
 
 // = Initial results
 // ==
@@ -663,24 +664,21 @@ mat(delayedmarkhl(#6, mat(delim: #none, chi^(arrow.t arrow.t)_(1 1), chi^(arrow.
 // 
 // ])
 
-== Now used in Materials Project!
-#align(top,
-  image("figures/ptable_HubbardU.svg", width: 100%, height: 80%)
-)
-#blcite(<Moore2024>)
-
 == BLOR
 #align(center,
   image("figures/blor.svg", width: 80%)
 )
 
-*BLOR*: a DFT+_U_ type functional that...
+a DFT+_U_ type functional that...
 - is inspired by the intrinsic errors of approximate DFT
 - relies on spin-resolved linear response
 - includes a term to correct for static correlation error
 - is double-counting-free
 
+#v(-2em)
 #blcite(<Burgess2023>)#blcite(<Burgess2024a>)
+
+== BLOR
 
 #grid(columns: (2fr, 3fr), align: center + horizon, gutter: 1em,
   image("figures/blor_on_h2.svg", width: 100%),
@@ -688,6 +686,14 @@ mat(delayedmarkhl(#6, mat(delim: #none, chi^(arrow.t arrow.t)_(1 1), chi^(arrow.
   [stretched H#sub[2]],
   [stretched H#sub[5]#super[+]]
 )
+#blcite(<Burgess2023>)#blcite(<Burgess2024a>)
+
+== Spin-resolved LR used in Materials Project!
+#align(top,
+  image("figures/ptable_HubbardU.svg", width: 100%, height: 80%)
+)
+#blcite(<Moore2024>)
+
 
 == Summary
 
@@ -1347,6 +1353,12 @@ $ chevron.l phi_(i sigma)|v^"KIPZ"_(j sigma',"xc")|phi_(j sigma')chevron.r appro
   - spectral functional theory@Ferretti2014
   - ensemble DFT
   - RDMFT
+
+== Deviation from the flat plane condition
+
+#align(center + horizon,
+  image("figures/he_deviation_from_flat_plane.svg", width: 50%)
+)
 
 == What is screening $U$?
 
