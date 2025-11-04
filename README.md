@@ -1,10 +1,8 @@
-# Typst template for PSI slides
+# Slides for presentation at PsiQuantum
+See [slides.pdf](./slides.pdf)
 
-Created by Edward Linscott based on the [university theme](https://touying-typ.github.io/touying/docs/themes/university)
-
-For use by PSI researchers only
-
-For an example see [slides.pdf](./slides.pdf)
+## Template
+Slide template created by Edward Linscott based on the [university theme](https://touying-typ.github.io/touying/docs/themes/university). For use by PSI researchers only.
 
 ## Missing `touying`?
 
