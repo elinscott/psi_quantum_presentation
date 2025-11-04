@@ -742,7 +742,7 @@ grid(columns: (10%, 10%, 10%, 10%, 10%), column-gutter: 0.5em, align: center, ro
 )
 ]
 
-#focus-slide()[#align(center, text(size: 2em, [Thank you!]) + linebreak() + text(size: 0.5em, style: "italic", [these slides are available at #h(0.2em) #box[#move(dy: 0.1em, image("media/logos/github-mark-white.svg", height: 1em))] `elinscott-talks`]))]
+#focus-slide()[#align(center, text(size: 2em, [Thank you!]) + linebreak() + text(size: 0.5em, style: "italic", [these slides are available at #h(0.2em) #box[#move(dy: 0.1em, image("media/logos/github-mark-white.svg", height: 1em))] `elinscott-talks/psi_quantum_presentation`]))]
 
 #show: appendix
 
